@@ -47,6 +47,8 @@
 //   }
 //   return test;
 // }
+
+/*HAY QUE PONER formulario.setAttribute('novalidate', true);*/
 //
 //
 // function validaPhone(){
@@ -171,3 +173,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// blur: pierde el foco
+// input : mientras escrib
