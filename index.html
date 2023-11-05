@@ -15,10 +15,23 @@
     * {
       box-sizing: border-box;
     }
+
+    .error{
+      background: #e56c13;
+      line-height: 2em;
+      margin: 2px 0;
+      color: white;
+    }
+
+    .error.active{
+      display: inline-block;
+      padding: 0 0.75em;
+    }
   </style>
 </head>
 
 <body>
+<button type="button" id="test">Testeo</button>
 <h1>Tarea 1: Validación</h1>
 <form id="formulario">
   <h2>Envíe sus comentarios</h2>
@@ -26,16 +39,14 @@
     <li>
       <label for="uname">Nombre de usuario:</label>
       <input type="text" name="uname" id="uname" minlength="5" max="20" required>
-      <div class="col-2" id="errorNombre">
-        <span class="error">  </span>
-      </div>
+      <div class="col-2" id="errorNombre"><span class="error"></span></div>
       <div class="w-100"></div>
     </li>
     <li>
       <label for="email">Email:</label>
-      <input type="email" name="email" id="email">
+      <input type="email" name="email" id="email" required>
       <div class="col-2" id="errorEmail">
-        <span class="error">  </span>
+        <span class="error"></span>
       </div>
       <div class="w-100"></div>
     </li>
@@ -43,16 +54,15 @@
       <label for="phone">Teléfono:</label>
       <input type="number" name="phone" id="phone" maxlength="15" required>
       <div class="col-2" id="errorPhone">
-        <span class="error">  </span>
+        <span class="error"></span>
       </div>
       <div class="w-100"></div>
     </li>
     <li>
       <label for="comment">Comentario:</label>
-      <textarea name="comment" id="comment" maxlength="200" required>
-          </textarea>
+      <textarea name="comment" id="comment" maxlength="200" required></textarea>
       <div class="col-2" id="errorComment">
-        <span class="error">  </span>
+        <span class="error"></span>
       </div>
       <div class="w-100"></div>
     </li>
