@@ -38,13 +38,13 @@
   <ul>
     <li>
       <label for="uname">Nombre de usuario:</label>
-      <input type="text" name="uname" id="uname" minlength="5" max="20" required>
+      <input type="text" name="uname" id="uname" pattern="^[a-z]\.[a-zA-Z0-9]{3,}$" required>
       <div class="col-2" id="errorNombre"><span class="error"></span></div>
       <div class="w-100"></div>
     </li>
     <li>
       <label for="email">Email:</label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" name="email" id="email" pattern="^[a-zA-Z0-9]+@vegasoft\.com$" required>
       <div class="col-2" id="errorEmail">
         <span class="error"></span>
       </div>
@@ -52,7 +52,7 @@
     </li>
     <li>
       <label for="phone">Teléfono:</label>
-      <input type="number" name="phone" id="phone" maxlength="15" required>
+      <input type="number" name="phone" id="phone" pattern="^(?:\d{10}|\d{3}[ -.]?\d{3}[ -.]?\d{4})$">
       <div class="col-2" id="errorPhone">
         <span class="error"></span>
       </div>

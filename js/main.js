@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function validaNombre() {
     nombre.setCustomValidity('');
     if (!nombre.validity.valid){
-      nombre.setCustomValidity("El nombre es obligatorio (5 letras)");
+      nombre.setCustomValidity("El nombre tiene que tener una letra, un punto y tres letras o números");
       return false;
     }
     return true;
@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (email.validity.valueMissing) {
       email.setCustomValidity("El correo es obligatorio")
       return false;
-    } else if (extraeDominio() != "@gmail.com"){
-      email.setCustomValidity("No es gmail");
+    } else if (extraeDominio() != "@vegasoft.com"){
+      email.setCustomValidity("No es vegasoft.com");
       return false;
     }
     return true;
@@ -90,8 +90,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function validaPhone(){
     phone.setCustomValidity('');
-    if (phone.validity.valueMissing){
-      phone.setCustomValidity("El teléfono es obligatorio")
+    let phoneValue = phone.value;
+    const phonePattern = /^(\d{10}|\d{3}[ -.]?\d{3}[ -.]?\d{4})?$/;
+    // if (phone.validity.valueMissing){ // para chequear que está vacío: no hace falta, no es required
+    //   phone.setCustomValidity("El teléfono es obligatorio")
+    //   // return false;
+    //   return true;
+    // }
+
+    if (!phonePattern.test(phoneValue)) {
+      phone.setCustomValidity("El teléfono no cumple con el formato correcto: sin separaciones, o separados 3-3-4");
       return false;
     }
     return true;
