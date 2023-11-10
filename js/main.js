@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (email.validity.valueMissing) {
       email.setCustomValidity("El correo es obligatorio")
       return false;
-    } else if (extraeDominio() != "@vegasoft.com"){
+    } else if (extraeDominio() !== "@vegasoft.com"){
       email.setCustomValidity("No es vegasoft.com");
       return false;
     }
